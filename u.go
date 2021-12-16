@@ -364,8 +364,9 @@ func RandStr(length int) string {
 	strs := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	strSlice := strings.Split(strs, "")
 	strList := make([]string, length)
+	rand.Seed(time.Now().UnixNano())
 	for i:=0;i<length;i++ {
-		num := RandNum(len(strs))
+		num := rand.Intn(len(strs))
 		strList = append(strList, strSlice[num])
 	}
 	return strings.Join(strList, "")
