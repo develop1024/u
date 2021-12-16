@@ -152,6 +152,6 @@ func Foreach(n int, callback func()) {
 // Debug 调试输出
 func Debug(data ...interface{}) {
 	log.Println("#############################################")
-	log.Println(data)
+	log.Println(data...)
 	log.Println("#############################################")
 }
