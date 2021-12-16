@@ -1,4 +1,4 @@
-module u
+module github.com/develop1024/u
 
 go 1.17
 
