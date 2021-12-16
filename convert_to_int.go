@@ -44,6 +44,8 @@ func ToInt64(val interface{}) int64 {
 			return int64(floatVal)
 		}
 		return 0
+	case int:
+		return int64(val.(int))
 	case int8:
 		return int64(val.(int8))
 	case int16:
