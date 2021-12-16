@@ -349,8 +349,6 @@ func HasExists(dataList interface{}, data interface{}) bool {
 
 // RandNum 生成随机数
 func RandNum(num int) int {
-	time.Sleep(time.Nanosecond)
-	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(num)
 }
 
@@ -364,9 +362,8 @@ func RandStr(length int) string {
 	strs := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	strSlice := strings.Split(strs, "")
 	strList := make([]string, length)
-	rand.Seed(time.Now().UnixNano())
 	for i:=0;i<length;i++ {
-		num := rand.Intn(len(strs))
+		num := RandNum(len(strs))
 		strList = append(strList, strSlice[num])
 	}
 	return strings.Join(strList, "")
