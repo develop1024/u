@@ -4,6 +4,7 @@ import (
 	"github.com/go-basic/uuid"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
+	"log"
 	"strings"
 )
 
@@ -146,4 +147,11 @@ func Foreach(n int, callback func()) {
 	for i:=0;i<n;i++ {
 		callback()
 	}
+}
+
+// Debug 调试输出
+func Debug(data ...interface{}) {
+	log.Println("#############################################")
+	log.Println(data)
+	log.Println("#############################################")
 }
