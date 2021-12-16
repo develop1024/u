@@ -1,12 +1,15 @@
 package u
 
 import (
+	"math"
 	"math/rand"
 	"strings"
+	"time"
 )
 
 // RandNum 生成随机数
 func RandNum(num int) int {
+	rand.Seed( time.Now().Unix() + int64(rand.Intn(math.MaxInt)) )
 	return rand.Intn(num)
 }
 

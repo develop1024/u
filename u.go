@@ -1,6 +1,7 @@
 package u
 
 import (
+	"github.com/go-basic/uuid"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
 )
@@ -119,4 +120,10 @@ func HasExists(dataList interface{}, data interface{}) bool {
 	}
 
 	return result
+}
+
+// UUID 获取UUID
+func UUID() string {
+	s := uuid.New()
+	return s
 }
