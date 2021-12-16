@@ -4,6 +4,7 @@ import (
 	"github.com/go-basic/uuid"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
+	"strings"
 )
 
 // ErgodicParentChild 遍历父子组合关系
@@ -126,4 +127,23 @@ func HasExists(dataList interface{}, data interface{}) bool {
 func UUID() string {
 	s := uuid.New()
 	return s
+}
+
+// UUIDStr 获取UUID字符串, 不含"-"
+func UUIDStr() string {
+	s := uuid.New()
+	return strings.ReplaceAll(s, "-", "")
+}
+
+// UUIDStrUpper 获取UUID字符串, 不含"-", 转大写
+func UUIDStrUpper() string {
+	s := uuid.New()
+	return strings.ToUpper(strings.ReplaceAll(s, "-", ""))
+}
+
+// Foreach 循环执行
+func Foreach(n int, callback func()) {
+	for i:=0;i<n;i++ {
+		callback()
+	}
 }
