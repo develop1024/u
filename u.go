@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-type H map[string]interface{}
+var H map[string]interface{}
 
 // ErgodicParentChild 遍历父子组合关系
 func ErgodicParentChild(tableName string, childName string, parentField string, childParentField string, isParentCondition interface{}) *gdb.Result {
