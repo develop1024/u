@@ -1,3 +1,3 @@
 ```shell
-go get github.com/develop1024/u@latest
+go get -u github.com/develop1024/u
 ```
