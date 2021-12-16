@@ -19,10 +19,10 @@ func ResponseError(r *ghttp.Request, err error) {
 	log.Println(err)
 	g.Log().Error(err.Error())
 
-	_ = r.Response.WriteJsonExit(g.Map{
+	ResponseJsonExit(Map{
 		"code": ServerError,
 		"msg":  "服务器开小差了, 请联系管理员~",
-	})
+	}, r)
 }
 
 // ResponseJson response json
@@ -39,7 +39,7 @@ func ResponseJsonExit(content interface{}, r *ghttp.Request) {
 func ResponseErrorAndSkip(r *ghttp.Request, err error) {
 	log.Println(err)
 
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": ServerError,
 		"msg":  "服务器开小差了, 请联系管理员~",
 	}, r)
@@ -50,7 +50,7 @@ func ResponseErrorWithMsg(msg string, err error, r *ghttp.Request) {
 	log.Println(err)
 	g.Log().Error(err.Error())
 
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": ServerError,
 		"msg":  msg,
 	}, r)
@@ -58,7 +58,7 @@ func ResponseErrorWithMsg(msg string, err error, r *ghttp.Request) {
 
 // ResponseFail 返回失败
 func ResponseFail(r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": LogicError,
 		"msg":  "操作失败",
 	}, r)
@@ -66,7 +66,7 @@ func ResponseFail(r *ghttp.Request) {
 
 // ResponseFailWithMsg 返回失败并指定消息
 func ResponseFailWithMsg(msg string, r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": LogicError,
 		"msg":  msg,
 	}, r)
@@ -74,7 +74,7 @@ func ResponseFailWithMsg(msg string, r *ghttp.Request) {
 
 // ResponseSuccess 返回成功
 func ResponseSuccess(r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": Success,
 		"msg":  "操作成功",
 	}, r)
@@ -82,7 +82,7 @@ func ResponseSuccess(r *ghttp.Request) {
 
 // ResponseSuccessWithMsg 返回成功并指定消息
 func ResponseSuccessWithMsg(msg string, r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": Success,
 		"msg":  msg,
 	}, r)
@@ -90,7 +90,7 @@ func ResponseSuccessWithMsg(msg string, r *ghttp.Request) {
 
 // ResponseSuccessWithData 返回成功并指定数据
 func ResponseSuccessWithData(data interface{}, r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": Success,
 		"msg":  "操作成功",
 		"data": data,
@@ -107,10 +107,9 @@ func ResponseSuccessWithCustomData(data map[string]interface{}, r *ghttp.Request
 
 // ResponseSuccessWithDataMsg 返回成功并指定数据和消息
 func ResponseSuccessWithDataMsg(data map[string]interface{}, msg string, r *ghttp.Request) {
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": Success,
 		"msg":  msg,
 		"data": data,
 	}, r)
 }
-

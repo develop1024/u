@@ -76,7 +76,7 @@ func Paginate(total int, r *ghttp.Request, function func(page, pageSize int) (gd
 		hasNextPage = false
 	}
 
-	ResponseSuccessWithData(H{
+	ResponseSuccessWithData(Map{
 		"total": total,
 		"totalPage": totalPage,
 		"currentPage": page,
@@ -96,7 +96,7 @@ func LayPage(r *ghttp.Request, tableName string, where interface{})  {
 	count, err := g.DB().Model(tableName).Where(where).Count()
 	GetErrorExit(err, r)
 
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": 0,
 		"msg": "ok",
 		"count": count,
@@ -118,7 +118,7 @@ func LayPageCallback(r *ghttp.Request, tableName string, where interface{}, call
 	count, err := g.DB().Model(tableName).Where(where).Count()
 	GetErrorExit(err, r)
 
-	ResponseJsonExit(H{
+	ResponseJsonExit(Map{
 		"code": 0,
 		"msg": "ok",
 		"count": count,
