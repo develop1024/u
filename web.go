@@ -76,7 +76,7 @@ func Paginate(total int, r *ghttp.Request, function func(page, pageSize int) (gd
 		hasNextPage = false
 	}
 
-	ResponseSuccessWithData(g.Map{
+	ResponseSuccessWithData(H{
 		"total": total,
 		"totalPage": totalPage,
 		"currentPage": page,
@@ -96,12 +96,12 @@ func LayPage(r *ghttp.Request, tableName string, where interface{})  {
 	count, err := g.DB().Model(tableName).Where(where).Count()
 	GetErrorExit(err, r)
 
-	_ = r.Response.WriteJsonExit(g.Map{
+	ResponseJsonExit(H{
 		"code": 0,
 		"msg": "ok",
 		"count": count,
 		"data": data,
-	})
+	}, r)
 }
 
 // LayPageCallback layui分页支持回调函数
@@ -118,10 +118,10 @@ func LayPageCallback(r *ghttp.Request, tableName string, where interface{}, call
 	count, err := g.DB().Model(tableName).Where(where).Count()
 	GetErrorExit(err, r)
 
-	_ = r.Response.WriteJsonExit(g.Map{
+	ResponseJsonExit(H{
 		"code": 0,
 		"msg": "ok",
 		"count": count,
 		"data": data,
-	})
+	}, r)
 }
