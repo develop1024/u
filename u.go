@@ -43,7 +43,7 @@ func ErgodicParentChild1(tableName string,
 		childName,
 		parentField,
 		childParentField,
-		childParentField + ` is null or `+ childParentField +` =''`
+		childParentField + ` is null or `+ childParentField +` =''`,
 	)
 }
 
