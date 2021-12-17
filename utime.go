@@ -177,3 +177,8 @@ func (receiver UTime) SubSecond() UTime {
 func (receiver UTime) SubSeconds(seconds int) UTime {
 	return UTime{carbon.Now().SubSeconds(seconds).Carbon2Time()}
 }
+
+// ToTime UTime对象转time.Time对象
+func (receiver UTime) ToTime() time.Time {
+	return receiver.Time
+}
