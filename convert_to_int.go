@@ -1,6 +1,8 @@
 package u
 
 import (
+	"bytes"
+	"encoding/binary"
 	"regexp"
 	"strconv"
 	"strings"
@@ -28,7 +30,7 @@ func ToInt32(val interface{}) int32 {
 
 // ToInt64 to int64
 func ToInt64(val interface{}) int64 {
-	switch val.(type) {
+	switch v := val.(type) {
 	case string:
 		str := val.(string)
 		matched, _ := regexp.MatchString(`^[0-9.]+$`, str)
@@ -53,7 +55,7 @@ func ToInt64(val interface{}) int64 {
 	case int32:
 		return int64(val.(int32))
 	case int64:
-		return val.(int64)
+		return v
 	case uint:
 		return int64(val.(uint))
 	case uint8:
@@ -68,6 +70,14 @@ func ToInt64(val interface{}) int64 {
 		return int64(val.(float32))
 	case float64:
 		return int64(val.(float64))
+	case []byte:
+		buffer := bytes.NewBuffer(val.([]byte))
+		var data int64
+		err := binary.Read(buffer, binary.BigEndian, &data)
+		if err != nil {
+			return 0
+		}
+		return int64(data)
 	default:
 		return 0
 	}

@@ -1,6 +1,8 @@
 package u
 
 import (
+	"encoding/binary"
+	"math"
 	"regexp"
 	"strconv"
 	"strings"
@@ -13,7 +15,7 @@ func ToFloat32(val interface{}) float32 {
 
 // ToFloat64 to float64
 func ToFloat64(val interface{}) float64 {
-	switch val.(type) {
+	switch v := val.(type) {
 	case string:
 		str := val.(string)
 		matched, _ := regexp.MatchString(`^[0-9.]+$`, str)
@@ -52,7 +54,10 @@ func ToFloat64(val interface{}) float64 {
 	case float32:
 		return float64(val.(float32))
 	case float64:
-		return val.(float64)
+		return v
+	case []byte:
+		bits := binary.LittleEndian.Uint64(val.([]byte))
+		return math.Float64frombits(bits)
 	default:
 		return 0
 	}

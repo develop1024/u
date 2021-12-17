@@ -7,9 +7,9 @@ import (
 
 // ToString val to string
 func ToString(val interface{}) string {
-	switch val.(type) {
+	switch v := val.(type) {
 	case string:
-		return val.(string)
+		return v
 	case []byte:
 		return string(val.([]byte))
 	case int:
