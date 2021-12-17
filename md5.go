@@ -20,4 +20,3 @@ func MD5Salt(data string, salt string) string {
 	sum := hash.Sum(nil)
 	return hex.EncodeToString(sum)
 }
-
