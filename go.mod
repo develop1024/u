@@ -7,6 +7,8 @@ require (
 	github.com/go-basic/uuid v1.0.0
 	github.com/gogf/gf v1.16.6
 	github.com/golang-module/carbon/v2 v2.0.1
+	github.com/gookit/color v1.5.0
+	github.com/sirupsen/logrus v1.8.1
 	github.com/tidwall/gjson v1.12.1
 )
 
@@ -18,7 +20,6 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/gomodule/redigo v1.8.5 // indirect
-	github.com/gookit/color v1.5.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/grokify/html-strip-tags-go v0.0.0-20190921062105-daaa06bf1aaf // indirect
 	github.com/mattn/go-colorable v0.1.8 // indirect
