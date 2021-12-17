@@ -7,6 +7,7 @@ require (
 	github.com/go-basic/uuid v1.0.0
 	github.com/gogf/gf v1.16.6
 	github.com/golang-module/carbon/v2 v2.0.1
+	github.com/tidwall/gjson v1.12.1
 )
 
 require (
@@ -23,6 +24,8 @@ require (
 	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
+	github.com/tidwall/match v1.1.1 // indirect
+	github.com/tidwall/pretty v1.2.0 // indirect
 	go.opentelemetry.io/otel v1.0.0-RC2 // indirect
 	go.opentelemetry.io/otel/trace v1.0.0-RC2 // indirect
 	golang.org/x/net v0.0.0-20210520170846-37e1c6afe023 // indirect
