@@ -11,6 +11,12 @@ import (
 
 type Map map[string]interface{}
 
+// Author contact author
+func Author() {
+	fmt.Println("author: 王哈哈")
+	fmt.Println("contact: 31931727@qq.com")
+}
+
 // ErgodicParentChild 遍历父子组合关系
 func ErgodicParentChild(tableName string, childName string, parentField string, childParentField string, isParentCondition interface{}) *gdb.Result {
 	parentData, _ := g.DB().Model(tableName).Where(isParentCondition).FindAll()
@@ -161,6 +167,6 @@ func Debug(data ...interface{}) {
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.3")
-	fmt.Println("Last update time: 2021-12-17 14:34:00")
+	fmt.Println("v0.0.4")
+	fmt.Println("Last update time: 2021-12-17 15:20:00")
 }
