@@ -158,15 +158,58 @@ func Foreach(n int, callback func()) {
 	}
 }
 
+// separator 分隔符
+const separator = "#############################################"
+
 // Debug 调试输出
 func Debug(data ...interface{}) {
-	log.Println("#############################################")
+	log.Println(separator)
 	log.Println(data...)
-	log.Println("#############################################")
+	log.Println(separator)
+}
+
+// DebugYellow 调试输出-黄色
+func DebugYellow(data ...interface{}) {
+	PrintlnYellow(DateTime(), separator)
+	PrintYellow(DateTime(), " ")
+	PrintlnYellow(data...)
+	PrintlnYellow(DateTime(), separator)
+}
+
+// DebugBlue 调试输出-蓝色
+func DebugBlue(data ...interface{}) {
+	PrintlnBlue(DateTime(), separator)
+	PrintBlue(DateTime(), " ")
+	PrintlnBlue(data...)
+	PrintlnBlue(DateTime(), separator)
+}
+
+// DebugGreen 调试输出-绿色
+func DebugGreen(data ...interface{}) {
+	PrintlnGreen(DateTime(), separator)
+	PrintGreen(DateTime(), " ")
+	PrintlnGreen(data...)
+	PrintlnGreen(DateTime(), separator)
+}
+
+// DebugGray 调试输出-灰色
+func DebugGray(data ...interface{}) {
+	PrintlnGray(DateTime(), separator)
+	PrintGray(DateTime(), " ")
+	PrintlnGray(data...)
+	PrintlnGray(DateTime(), separator)
+}
+
+// DebugCyan 调试输出-青色
+func DebugCyan(data ...interface{}) {
+	PrintlnCyan(DateTime(), separator)
+	PrintCyan(DateTime(), " ")
+	PrintlnCyan(data...)
+	PrintlnCyan(DateTime(), separator)
 }
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.4")
-	fmt.Println("Last update time: 2021-12-17 15:20:00")
+	fmt.Println("v0.0.5")
+	fmt.Println("Last update time: 2021-12-17 16:07:00")
 }
