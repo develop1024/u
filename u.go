@@ -232,6 +232,6 @@ func DebugCyan(data ...interface{}) {
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.7")
-	fmt.Println("Last update time: 2021-12-17 16:59:00")
+	fmt.Println("v0.0.8")
+	fmt.Println("Last update time: 2021-12-17 17:07:00")
 }

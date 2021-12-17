@@ -5,6 +5,7 @@ import "log"
 // GetError 获取错误
 func GetError(err error) {
 	if err != nil {
+		Log().Errorln(err)
 		log.Fatalln(err)
 	}
 }
@@ -13,6 +14,6 @@ func GetError(err error) {
 func GetErrorCallback(err error, function func(err error)) {
 	if err != nil {
 		function(err)
+		Log().Errorln(err)
 	}
 }
-
