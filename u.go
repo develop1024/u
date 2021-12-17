@@ -18,24 +18,46 @@ func Author() {
 }
 
 // ErgodicParentChild 遍历父子组合关系
-func ErgodicParentChild(tableName string, childName string, parentField string, childParentField string, isParentCondition interface{}) *gdb.Result {
+func ErgodicParentChild(tableName string,
+	childName string,
+	parentField string,
+	childParentField string,
+	isParentCondition interface{}) *gdb.Result {
 	parentData, _ := g.DB().Model(tableName).Where(isParentCondition).FindAll()
 
 	for _, parent := range parentData {
-		childData, _ := g.DB().Model(tableName).Where(g.Map{childParentField: parent[parentField]}).FindAll()
+		childData, _ := g.DB().Model(tableName).Where(g.Map{
+			childParentField: parent[parentField],
+		}).FindAll()
 		parent[childName] = g.NewVar(childData)
 	}
 	return &parentData
 }
 
 // ErgodicParentChild1 遍历父子组合关系
-func ErgodicParentChild1(tableName string, childName string, parentField string, childParentField string) *gdb.Result {
-	return ErgodicParentChild(tableName, childName, parentField, childParentField, childParentField + ` is null or `+ childParentField +` =''`)
+func ErgodicParentChild1(tableName string,
+	childName string,
+	parentField string,
+	childParentField string) *gdb.Result {
+	return ErgodicParentChild(tableName,
+		childName,
+		parentField,
+		childParentField,
+		childParentField + ` is null or `+ childParentField +` =''`
+	)
 }
 
 // ErgodicParentChild2 遍历父子组合关系
-func ErgodicParentChild2(tableName string, childName string, parentField string, childParentField string) *gdb.Result {
-	return ErgodicParentChild(tableName, childName, parentField, childParentField, parentField + `=0`)
+func ErgodicParentChild2(tableName string,
+	childName string,
+	parentField string,
+	childParentField string) *gdb.Result {
+	return ErgodicParentChild(tableName,
+		childName,
+		parentField,
+		childParentField,
+		parentField + `=0`,
+	)
 }
 
 // HasExists 判断元素是否存在与某列表
