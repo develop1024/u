@@ -1,6 +1,7 @@
 package u
 
 import (
+	"fmt"
 	"github.com/go-basic/uuid"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
@@ -156,4 +157,10 @@ func Debug(data ...interface{}) {
 	log.Println("#############################################")
 	log.Println(data...)
 	log.Println("#############################################")
+}
+
+// Version 输出版本
+func Version() {
+	fmt.Println("v0.0.1")
+	fmt.Println("2021-12-17 13:59:00")
 }
