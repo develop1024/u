@@ -1,12 +1,9 @@
 package u
 
-import "log"
-
 // GetError 获取错误
 func GetError(err error) {
 	if err != nil {
 		Log().Errorln(err)
-		log.Fatalln(err)
 	}
 }
 
