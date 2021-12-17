@@ -20,11 +20,11 @@ func RandRangeNum(min, max int) int {
 
 // RandStr 生成随机字符串
 func RandStr(length int) string {
-	strs := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	strSlice := strings.Split(strs, "")
+	chars := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	strSlice := strings.Split(chars, "")
 	strList := make([]string, length)
 	for i:=0;i<length;i++ {
-		num := RandNum(len(strs))
+		num := RandNum(len(chars))
 		strList = append(strList, strSlice[num])
 	}
 	return strings.Join(strList, "")
