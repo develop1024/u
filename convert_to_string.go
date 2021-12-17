@@ -8,6 +8,8 @@ import (
 // ToString val to string
 func ToString(val interface{}) string {
 	switch val.(type) {
+	case string:
+		return val.(string)
 	case []byte:
 		return string(val.([]byte))
 	case int:
@@ -20,6 +22,8 @@ func ToString(val interface{}) string {
 		return strconv.Itoa(int(val.(int32)))
 	case int64:
 		return strconv.Itoa(int(val.(int64)))
+	case uint:
+		return strconv.Itoa(int(val.(uint)))
 	case uint8:
 		return strconv.Itoa(int(val.(uint8)))
 	case uint16:
@@ -36,4 +40,3 @@ func ToString(val interface{}) string {
 		return ""
 	}
 }
-

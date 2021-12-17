@@ -36,7 +36,7 @@ func ToInt64(val interface{}) int64 {
 			return 0
 		}
 
-		if strings.Count("358.5", ".") <= 1 {
+		if strings.Count(val.(string), ".") <= 1 {
 			floatVal, err := strconv.ParseFloat(str, 64)
 			if err != nil {
 				return 0
@@ -54,6 +54,8 @@ func ToInt64(val interface{}) int64 {
 		return int64(val.(int32))
 	case int64:
 		return val.(int64)
+	case uint:
+		return int64(val.(uint))
 	case uint8:
 		return int64(val.(uint8))
 	case uint16:
