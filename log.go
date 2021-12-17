@@ -16,6 +16,11 @@ const (
 	TraceLevel = log.TraceLevel
 )
 
+var (
+	JSONFormatter = &log.JSONFormatter{}
+	TextFormatter = &log.TextFormatter{}
+)
+
 var logger *log.Logger
 var loggerOnce sync.Once
 
