@@ -30,14 +30,39 @@ func TimeAdd(t time.Duration) time.Time {
 	return time.Now().Add(t)
 }
 
-// Timestamp 获取当前时间时间戳
+// Timestamp 获取当前时间时间戳-秒
 func Timestamp() int64 {
 	return time.Now().Unix()
+}
+
+// TimestampMilliSecond 获取当前时间时间戳-毫秒
+func TimestampMilliSecond() int64 {
+	return time.Now().UnixMilli()
+}
+
+// TimestampMicroSecond 获取当前时间时间戳-微秒
+func TimestampMicroSecond() int64 {
+	return time.Now().UnixMicro()
+}
+
+// TimestampNanoSecond 获取当前时间时间戳-纳秒
+func TimestampNanoSecond() int64 {
+	return time.Now().UnixNano()
 }
 
 // DateTime 获取当前日期时间
 func DateTime() string {
 	return time.Now().Format("2006-01-02 15:04:05")
+}
+
+// Date 获取日期
+func Date() string {
+	return time.Now().Format("2006-01-02")
+}
+
+// Time 获取时间
+func Time() string {
+	return time.Now().Format("15:04:05")
 }
 
 // TimestampToDatetime 时间戳转格式化日期时间
