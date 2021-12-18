@@ -6,16 +6,42 @@ import (
 )
 
 const (
-	ColorRed     = color.Red
-	ColorCyan    = color.Cyan
-	ColorGray    = color.Gray
-	ColorBlue    = color.Blue
-	ColorBlack   = color.Black
-	ColorGreen   = color.Green
-	ColorWhite   = color.White
-	ColorYellow  = color.Yellow
-	ColorMagenta = color.Magenta
+	Red     = color.Red
+	Cyan    = color.Cyan
+	Gray    = color.Gray
+	Blue    = color.Blue
+	Black   = color.Black
+	Green   = color.Green
+	White   = color.White
+	Yellow  = color.Yellow
+	Magenta = color.Magenta
 )
+
+type _color struct {
+	ColorRed     color.Color
+	ColorCyan    color.Color
+	ColorGray    color.Color
+	ColorBlue    color.Color
+	ColorBlack   color.Color
+	ColorGreen   color.Color
+	ColorWhite   color.Color
+	ColorYellow  color.Color
+	ColorMagenta color.Color
+}
+
+func Color() *_color {
+	return &_color{
+		ColorRed:     color.Red,
+		ColorCyan:    color.Cyan,
+		ColorGray:    color.Gray,
+		ColorBlue:    color.Blue,
+		ColorBlack:   color.Black,
+		ColorGreen:   color.Green,
+		ColorWhite:   color.White,
+		ColorYellow:  color.Yellow,
+		ColorMagenta: color.Magenta,
+	}
+}
 
 // Println = fmt.Println
 func Println(val ...interface{}) {
