@@ -43,7 +43,7 @@ func ErgodicParentChild1(tableName string,
 		childName,
 		parentField,
 		childParentField,
-		childParentField + ` is null or `+ childParentField +` =''`,
+		childParentField+` is null or `+childParentField+` =''`,
 	)
 }
 
@@ -56,7 +56,7 @@ func ErgodicParentChild2(tableName string,
 		childName,
 		parentField,
 		childParentField,
-		parentField + `=0`,
+		parentField+`=0`,
 	)
 }
 
@@ -175,7 +175,7 @@ func UUIDStrUpper() string {
 
 // Foreach 循环执行
 func Foreach(n int, callback func()) {
-	for i:=0;i<n;i++ {
+	for i := 0; i < n; i++ {
 		callback()
 	}
 }
@@ -192,46 +192,46 @@ func Debug(data ...interface{}) {
 
 // DebugYellow 调试输出-黄色
 func DebugYellow(data ...interface{}) {
-	PrintlnYellow(DateTime(), separator)
-	PrintYellow(DateTime(), " ")
+	PrintlnYellow(UTime().DateTime(), separator)
+	PrintYellow(UTime().DateTime(), " ")
 	PrintlnYellow(data...)
-	PrintlnYellow(DateTime(), separator)
+	PrintlnYellow(UTime().DateTime(), separator)
 }
 
 // DebugBlue 调试输出-蓝色
 func DebugBlue(data ...interface{}) {
-	PrintlnBlue(DateTime(), separator)
-	PrintBlue(DateTime(), " ")
+	PrintlnBlue(UTime().DateTime(), separator)
+	PrintBlue(UTime().DateTime(), " ")
 	PrintlnBlue(data...)
-	PrintlnBlue(DateTime(), separator)
+	PrintlnBlue(UTime().DateTime(), separator)
 }
 
 // DebugGreen 调试输出-绿色
 func DebugGreen(data ...interface{}) {
-	PrintlnGreen(DateTime(), separator)
-	PrintGreen(DateTime(), " ")
+	PrintlnGreen(UTime().DateTime(), separator)
+	PrintGreen(UTime().DateTime(), " ")
 	PrintlnGreen(data...)
-	PrintlnGreen(DateTime(), separator)
+	PrintlnGreen(UTime().DateTime(), separator)
 }
 
 // DebugGray 调试输出-灰色
 func DebugGray(data ...interface{}) {
-	PrintlnGray(DateTime(), separator)
-	PrintGray(DateTime(), " ")
+	PrintlnGray(UTime().DateTime(), separator)
+	PrintGray(UTime().DateTime(), " ")
 	PrintlnGray(data...)
-	PrintlnGray(DateTime(), separator)
+	PrintlnGray(UTime().DateTime(), separator)
 }
 
 // DebugCyan 调试输出-青色
 func DebugCyan(data ...interface{}) {
-	PrintlnCyan(DateTime(), separator)
-	PrintCyan(DateTime(), " ")
+	PrintlnCyan(UTime().DateTime(), separator)
+	PrintCyan(UTime().DateTime(), " ")
 	PrintlnCyan(data...)
-	PrintlnCyan(DateTime(), separator)
+	PrintlnCyan(UTime().DateTime(), separator)
 }
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.9")
-	fmt.Println("Last update time: 2021-12-18 15:34:00")
+	fmt.Println("v0.0.10")
+	fmt.Println("Last update time: 2021-12-18 20:11:00")
 }

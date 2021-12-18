@@ -5,13 +5,17 @@ import (
 	"sync"
 )
 
-var _cron *cron.Cron
+type cronObj struct {
+	cron.Cron
+}
+
+var _cron *cronObj
 var _cronOnce sync.Once
 
 // Cron 获取cron对象
-func Cron() *cron.Cron {
+func Cron() *cronObj {
 	_cronOnce.Do(func() {
-		_cron = cron.New()
+		_cron = &cronObj{}
 	})
 	return _cron
 }

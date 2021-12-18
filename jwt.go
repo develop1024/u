@@ -21,9 +21,13 @@ func JWT() *jwtObj {
 }
 
 // GenerateToken 生成token
-func (receiver *jwtObj) GenerateToken(secret string, claims jwt.MapClaims) (token string, err error) {
+func (receiver *jwtObj) GenerateToken(secret string, claims Map) (token string, err error) {
+	_mapClaims := jwt.MapClaims{}
+	for k, v := range claims {
+		_mapClaims[k] = v
+	}
 	// 创建一个新的令牌对象，指定签名方法和声明
-	tokenObj := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	tokenObj := jwt.NewWithClaims(jwt.SigningMethodHS256, _mapClaims)
 	// 使用密码签名并获得完整的编码令牌作为字符串
 	token, err = tokenObj.SignedString([]byte(secret))
 	return

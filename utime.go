@@ -46,12 +46,12 @@ func (receiver *uTime) ParseUTime(t string) uTime {
 
 // TimestampToTimeObject 时间戳转time.Time对象
 func (receiver *uTime) TimestampToTimeObject(t int64) time.Time {
-	return receiver.ParseTime(TimestampToDatetime(t))
+	return receiver.ParseTime(receiver.TimestampToDatetime(t))
 }
 
 // TimestampToUTimeObject 时间戳转UTime对象
 func (receiver *uTime) TimestampToUTimeObject(t int64) uTime {
-	return uTime{receiver.ParseTime(TimestampToDatetime(t))}
+	return uTime{receiver.ParseTime(receiver.TimestampToDatetime(t))}
 }
 
 // DateString 获取日期字符串
@@ -192,4 +192,64 @@ func (receiver *uTime) SubSeconds(seconds int) uTime {
 // ToTime UTime对象转time.Time对象
 func (receiver *uTime) ToTime() time.Time {
 	return receiver.Time
+}
+
+// Yesterday 获取昨天日期
+func (receiver *uTime) Yesterday() uTime {
+	return receiver.SubDay()
+}
+
+// Tomorrow 获取明天日期
+func (receiver *uTime) Tomorrow() uTime {
+	return receiver.AddDay()
+}
+
+// TimeFormat time.Time时间格式化
+func (receiver *uTime) TimeFormat(t time.Time) string {
+	return t.Format("2006-01-02 15:04:05")
+}
+
+// Timestamp 获取当前时间时间戳-秒
+func (receiver *uTime) Timestamp() int64 {
+	return time.Now().Unix()
+}
+
+// TimestampMilliSecond 获取当前时间时间戳-毫秒
+func (receiver *uTime) TimestampMilliSecond() int64 {
+	return time.Now().UnixMilli()
+}
+
+// TimestampMicroSecond 获取当前时间时间戳-微秒
+func (receiver *uTime) TimestampMicroSecond() int64 {
+	return time.Now().UnixMicro()
+}
+
+// TimestampNanoSecond 获取当前时间时间戳-纳秒
+func (receiver *uTime) TimestampNanoSecond() int64 {
+	return time.Now().UnixNano()
+}
+
+// DateTime 获取当前日期时间
+func (receiver *uTime) DateTime() string {
+	return time.Now().Format("2006-01-02 15:04:05")
+}
+
+// Date 获取日期
+func (receiver *uTime) Date() string {
+	return time.Now().Format("2006-01-02")
+}
+
+// TimestampToDatetime 时间戳转格式化日期时间
+func (receiver *uTime) TimestampToDatetime(unixTime int64) string {
+	t := time.Unix(unixTime, 0)
+	return t.Format("2006-01-02 15:04:05")
+}
+
+// DatetimeToTimestamp 日期时间转时间戳
+func (receiver *uTime) DatetimeToTimestamp(datetime string) int64 {
+	parse, err := time.Parse("2006-01-02 15:04:05", datetime)
+	if err != nil {
+		return 0
+	}
+	return parse.Unix()
 }
