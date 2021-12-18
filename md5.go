@@ -13,10 +13,10 @@ func MD5(data string) string {
 }
 
 // MD5Salt MD5加盐
-func MD5Salt(data string, salt string) string {
+func MD5Salt(salt string, data string) string {
 	hash := md5.New()
-	hash.Write([]byte(data))
 	hash.Write([]byte(salt))
+	hash.Write([]byte(data))
 	sum := hash.Sum(nil)
 	return hex.EncodeToString(sum)
 }

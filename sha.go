@@ -15,10 +15,10 @@ func SHA1(data string) string {
 }
 
 // SHA1Salt sha1加密-加盐
-func SHA1Salt(data string, salt string) string {
+func SHA1Salt(salt string, data string) string {
 	hash := sha1.New()
-	hash.Write([]byte(data))
 	hash.Write([]byte(salt))
+	hash.Write([]byte(data))
 	return hex.EncodeToString(hash.Sum(nil))
 }
 
@@ -30,10 +30,10 @@ func SHA256(data string) string {
 }
 
 // SHA256Salt sha256加密-加盐
-func SHA256Salt(data string, salt string) string {
+func SHA256Salt(salt string, data string) string {
 	hash := sha256.New()
-	hash.Write([]byte(data))
 	hash.Write([]byte(salt))
+	hash.Write([]byte(data))
 	return hex.EncodeToString(hash.Sum(nil))
 }
 
@@ -45,9 +45,10 @@ func SHA512(data string) string {
 }
 
 // SHA512Salt sha512加密-加盐
-func SHA512Salt(data string, salt string) string {
+func SHA512Salt(salt string, data string) string {
 	hash := sha512.New()
-	hash.Write([]byte(data))
 	hash.Write([]byte(salt))
+	hash.Write([]byte(data))
 	return hex.EncodeToString(hash.Sum(nil))
 }
+
