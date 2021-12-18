@@ -5,6 +5,18 @@ import (
 	"github.com/gookit/color"
 )
 
+const (
+	ColorRed     = color.Red
+	ColorCyan    = color.Cyan
+	ColorGray    = color.Gray
+	ColorBlue    = color.Blue
+	ColorBlack   = color.Black
+	ColorGreen   = color.Green
+	ColorWhite   = color.White
+	ColorYellow  = color.Yellow
+	ColorMagenta = color.Magenta
+)
+
 // Println = fmt.Println
 func Println(val ...interface{}) {
 	fmt.Println(val...)
