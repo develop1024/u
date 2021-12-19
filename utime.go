@@ -16,7 +16,7 @@ var _uTimeOnce sync.Once
 // Time 获取uTime对象
 func Time() *uTime {
 	_uTimeOnce.Do(func() {
-		_uTime = &uTime{}
+		_uTime = &uTime{time.Now()}
 	})
 	return _uTime
 }
