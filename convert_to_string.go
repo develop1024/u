@@ -36,6 +36,8 @@ func ToString(val interface{}) string {
 		return fmt.Sprintf("%.2f", val.(float32))
 	case float64:
 		return fmt.Sprintf("%.2f", val.(float64))
+	case bool:
+		return strconv.FormatBool(val.(bool))
 	default:
 		return ""
 	}
