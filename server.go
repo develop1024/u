@@ -1,6 +1,7 @@
 package u
 
 import (
+	"encoding/xml"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"reflect"
@@ -89,6 +90,14 @@ func (receiver *Context) JSON(data interface{}) {
 	}
 }
 
+// XML xml响应
+func (receiver *Context) XML(data interface{}) {
+	receiver.Response.WriteHeader(200)
+	receiver.Response.Header().Set("Content-Type", "application/xml")
+	bytes, _ := xml.Marshal(data)
+	_, _ = receiver.Response.Write(bytes)
+}
+
 // String 字符串响应
 func (receiver *Context) String(data string) {
 	receiver.Response.WriteHeader(200)
@@ -110,12 +119,12 @@ func (receiver *Context) Bind(obj interface{}) {
 	dataMap := receiver.Request.URL.Query()
 
 	v := reflect.ValueOf(obj)
-	for i:=0;i<v.Elem().NumField();i++ {
+	for i := 0; i < v.Elem().NumField(); i++ {
 		t := v.Type()
 		fieldValue := dataMap.Get(t.Elem().Field(i).Tag.Get("field"))
 
 		switch v.Elem().Field(i).Kind() {
-		case reflect.Int,reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
 			v.Elem().Field(i).SetInt(ToInt64(fieldValue))
 		case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
 			v.Elem().Field(i).SetUint(ToUint64(fieldValue))
