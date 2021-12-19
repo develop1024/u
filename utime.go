@@ -72,8 +72,8 @@ func (receiver *uTime) DateTimeString() string {
 
 // AddYear 增加1年
 func (receiver *uTime) AddYear() *uTime {
-
-	return &uTime{carbon.Now().AddYear().Carbon2Time()}
+	receiver.Time =  carbon.Now().AddYear().Carbon2Time()
+	return receiver
 }
 
 // AddYears 增加年数
