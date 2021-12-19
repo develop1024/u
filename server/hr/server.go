@@ -1,4 +1,4 @@
-package httprouter_server
+package hr
 
 import (
 	"github.com/develop1024/u"
