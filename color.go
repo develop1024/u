@@ -15,6 +15,36 @@ const (
 	White   = color.White
 	Yellow  = color.Yellow
 	Magenta = color.Magenta
+
+	FgDarkGray =color.FgDarkGray
+	FgLightRed = color.FgDarkGray
+	FgLightGreen = color.FgLightGreen
+	FgLightYellow = color.FgLightYellow
+	FgLightBlue = color.FgLightBlue
+	FgLightMagenta = color.FgLightMagenta
+	FgLightCyan = color.FgLightCyan
+	FgLightWhite = color.FgLightWhite
+	FgGray = color.FgGray
+
+	BgBlack = color.BgBlack
+	BgRed = color.BgRed
+	BgGreen = color.BgGreen
+	BgYellow = color.BgYellow
+	BgBlue = color.BgBlue
+	BgMagenta = color.BgMagenta
+	BgCyan = color.BgCyan
+	BgWhite = color.BgWhite
+	BgDefault = color.BgDefault
+
+	BgDarkGray = color.BgDarkGray
+	BgLightRed = color.BgLightRed
+	BgLightGreen = color.BgLightGreen
+	BgLightYellow = color.BgLightYellow
+	BgLightBlue = color.BgLightBlue
+	BgLightMagenta = color.BgLightMagenta
+	BgLightCyan = color.BgLightCyan
+	BgLightWhite = color.BgLightWhite
+	BgGray = color.BgGray
 )
 
 type _color struct {
@@ -27,6 +57,36 @@ type _color struct {
 	White   color.Color
 	Yellow  color.Color
 	Magenta color.Color
+
+	FgDarkGray color.Color
+	FgLightRed color.Color
+	FgLightGreen color.Color
+	FgLightYellow color.Color
+	FgLightBlue color.Color
+	FgLightMagenta color.Color
+	FgLightCyan color.Color
+	FgLightWhite color.Color
+	FgGray color.Color
+
+	BgBlack color.Color
+	BgRed color.Color
+	BgGreen color.Color
+	BgYellow color.Color
+	BgBlue color.Color
+	BgMagenta color.Color
+	BgCyan color.Color
+	BgWhite color.Color
+	BgDefault color.Color
+
+	BgDarkGray color.Color
+	BgLightRed color.Color
+	BgLightGreen  color.Color
+	BgLightYellow  color.Color
+	BgLightBlue  color.Color
+	BgLightMagenta  color.Color
+	BgLightCyan  color.Color
+	BgLightWhite  color.Color
+	BgGray  color.Color
 }
 
 func Color() *_color {
@@ -40,7 +100,42 @@ func Color() *_color {
 		White:   color.White,
 		Yellow:  color.Yellow,
 		Magenta: color.Magenta,
+
+		FgDarkGray :color.FgDarkGray,
+		FgLightRed : color.FgDarkGray,
+		FgLightGreen : color.FgLightGreen,
+		FgLightYellow : color.FgLightYellow,
+		FgLightBlue : color.FgLightBlue,
+		FgLightMagenta : color.FgLightMagenta,
+		FgLightCyan : color.FgLightCyan,
+		FgLightWhite : color.FgLightWhite,
+		FgGray : color.FgGray,
+
+		BgBlack : color.BgBlack,
+		BgRed : color.BgRed,
+		BgGreen : color.BgGreen,
+		BgYellow : color.BgYellow,
+		BgBlue : color.BgBlue,
+		BgMagenta : color.BgMagenta,
+		BgCyan : color.BgCyan,
+		BgWhite : color.BgWhite,
+		BgDefault : color.BgDefault,
+
+		BgDarkGray : color.BgDarkGray,
+		BgLightRed : color.BgLightRed,
+		BgLightGreen : color.BgLightGreen,
+		BgLightYellow : color.BgLightYellow,
+		BgLightBlue : color.BgLightBlue,
+		BgLightMagenta : color.BgLightMagenta,
+		BgLightCyan : color.BgLightCyan,
+		BgLightWhite : color.BgLightWhite,
+		BgGray : color.BgGray,
 	}
+}
+
+// NewColor create style
+func NewColor(c ...color.Color) color.Style {
+	return color.New(c...)
 }
 
 // Println = fmt.Println
