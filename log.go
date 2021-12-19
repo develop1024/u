@@ -3,6 +3,7 @@ package u
 import (
 	log "github.com/sirupsen/logrus"
 	"os"
+	"path/filepath"
 	"sync"
 )
 
@@ -32,11 +33,31 @@ func Log() *log.Logger {
 	return logger
 }
 
+// Exist check path exists
+func Exist(p string) bool {
+	_, err := os.Stat(p)
+	if err != nil {
+		if os.IsExist(err) {
+			return true
+		}
+	}
+	return false
+}
+
 // LogFile 日志文件
-func LogFile(filepath string) (*os.File, error) {
-	file, err := os.OpenFile(filepath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
+func LogFile(filePath string) (*os.File, error) {
+	exist := Exist(filePath)
+	if !exist {
+		err := os.MkdirAll(filepath.Dir(filePath), 0777)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	file, err := os.OpenFile(filePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
 	if err != nil {
 		return nil, err
 	}
 	return file, nil
 }
+
