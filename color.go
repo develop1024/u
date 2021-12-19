@@ -17,7 +17,7 @@ const (
 	Magenta = color.Magenta
 
 	FgDarkGray =color.FgDarkGray
-	FgLightRed = color.FgDarkGray
+	FgLightRed = color.FgLightRed
 	FgLightGreen = color.FgLightGreen
 	FgLightYellow = color.FgLightYellow
 	FgLightBlue = color.FgLightBlue
@@ -45,6 +45,30 @@ const (
 	BgLightCyan = color.BgLightCyan
 	BgLightWhite = color.BgLightWhite
 	BgGray = color.BgGray
+
+	LightRed     = FgLightRed
+	LightCyan    = FgLightCyan
+	LightBlue    = FgLightBlue
+	LightGreen   = FgLightGreen
+	LightWhite   = FgLightWhite
+	LightYellow  = FgLightYellow
+	LightMagenta = FgLightMagenta
+
+	HiRed     = FgLightRed
+	HiCyan    = FgLightCyan
+	HiBlue    = FgLightBlue
+	HiGreen   = FgLightGreen
+	HiWhite   = FgLightWhite
+	HiYellow  = FgLightYellow
+	HiMagenta = FgLightMagenta
+
+	BgHiRed     = BgLightRed
+	BgHiCyan    = BgLightCyan
+	BgHiBlue    = BgLightBlue
+	BgHiGreen   = BgLightGreen
+	BgHiWhite   = BgLightWhite
+	BgHiYellow  = BgLightYellow
+	BgHiMagenta = BgLightMagenta
 )
 
 type _color struct {

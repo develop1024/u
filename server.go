@@ -70,9 +70,9 @@ func (receiver *router) OPTIONS(path string, f func(c *Context)) {
 
 // Run 运行
 func (receiver *router) Run(addr string) error {
-	NewColor(FgLightWhite, BgLightRed).Println("#######################################################")
-	NewColor(FgLightWhite, BgLightYellow).Printf("uWeb listen %s start time: %s\n", addr, Time().Now().DateTime())
-	NewColor(FgLightWhite, BgLightRed).Println("#######################################################")
+	NewColor(FgLightWhite).Println("#######################################################")
+	NewColor(LightRed).Printf("uWeb listen %s start time: %s\n", addr, Time().Now().DateTime())
+	NewColor(FgLightWhite).Println("#######################################################")
 	return http.ListenAndServe(addr, _server)
 }
 
