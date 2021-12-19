@@ -1,9 +1,10 @@
 package u
 
-import "github.com/develop1024/u/server/httprouter_server"
+import (
+	"github.com/develop1024/u/server/hr"
+)
 
 // Server get server
-func Server() *httprouter_server.Router {
-	return httprouter_server.Server()
+func Server() *hr.Router {
+	return hr.Server()
 }
-
