@@ -13,8 +13,8 @@ type uTime struct {
 var _uTime *uTime
 var _uTimeOnce sync.Once
 
-// UTime 获取uTime对象
-func UTime() *uTime {
+// Time 获取uTime对象
+func Time() *uTime {
 	_uTimeOnce.Do(func() {
 		_uTime = &uTime{}
 	})

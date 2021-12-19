@@ -192,46 +192,46 @@ func Debug(data ...interface{}) {
 
 // DebugYellow 调试输出-黄色
 func DebugYellow(data ...interface{}) {
-	PrintlnYellow(UTime().DateTime(), separator)
-	PrintYellow(UTime().DateTime(), " ")
+	PrintlnYellow(Time().DateTime(), separator)
+	PrintYellow(Time().DateTime(), " ")
 	PrintlnYellow(data...)
-	PrintlnYellow(UTime().DateTime(), separator)
+	PrintlnYellow(Time().DateTime(), separator)
 }
 
 // DebugBlue 调试输出-蓝色
 func DebugBlue(data ...interface{}) {
-	PrintlnBlue(UTime().DateTime(), separator)
-	PrintBlue(UTime().DateTime(), " ")
+	PrintlnBlue(Time().DateTime(), separator)
+	PrintBlue(Time().DateTime(), " ")
 	PrintlnBlue(data...)
-	PrintlnBlue(UTime().DateTime(), separator)
+	PrintlnBlue(Time().DateTime(), separator)
 }
 
 // DebugGreen 调试输出-绿色
 func DebugGreen(data ...interface{}) {
-	PrintlnGreen(UTime().DateTime(), separator)
-	PrintGreen(UTime().DateTime(), " ")
+	PrintlnGreen(Time().DateTime(), separator)
+	PrintGreen(Time().DateTime(), " ")
 	PrintlnGreen(data...)
-	PrintlnGreen(UTime().DateTime(), separator)
+	PrintlnGreen(Time().DateTime(), separator)
 }
 
 // DebugGray 调试输出-灰色
 func DebugGray(data ...interface{}) {
-	PrintlnGray(UTime().DateTime(), separator)
-	PrintGray(UTime().DateTime(), " ")
+	PrintlnGray(Time().DateTime(), separator)
+	PrintGray(Time().DateTime(), " ")
 	PrintlnGray(data...)
-	PrintlnGray(UTime().DateTime(), separator)
+	PrintlnGray(Time().DateTime(), separator)
 }
 
 // DebugCyan 调试输出-青色
 func DebugCyan(data ...interface{}) {
-	PrintlnCyan(UTime().DateTime(), separator)
-	PrintCyan(UTime().DateTime(), " ")
+	PrintlnCyan(Time().DateTime(), separator)
+	PrintCyan(Time().DateTime(), " ")
 	PrintlnCyan(data...)
-	PrintlnCyan(UTime().DateTime(), separator)
+	PrintlnCyan(Time().DateTime(), separator)
 }
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.13")
-	fmt.Println("Last update time: 2021-12-18 21:42:00")
+	fmt.Println("v0.0.14")
+	fmt.Println("Last update time: 2021-12-19 10:45:00")
 }
