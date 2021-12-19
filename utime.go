@@ -234,34 +234,34 @@ func (receiver *uTime) TimeFormat(t time.Time) string {
 	return t.Format("2006-01-02 15:04:05")
 }
 
-// Timestamp 获取当前时间时间戳-秒
+// Timestamp 获取时间戳-秒
 func (receiver *uTime) Timestamp() int64 {
-	return time.Now().Unix()
+	return receiver.Unix()
 }
 
-// TimestampMilliSecond 获取当前时间时间戳-毫秒
+// TimestampMilliSecond 获取时间戳-毫秒
 func (receiver *uTime) TimestampMilliSecond() int64 {
-	return time.Now().UnixMilli()
+	return receiver.UnixMilli()
 }
 
-// TimestampMicroSecond 获取当前时间时间戳-微秒
+// TimestampMicroSecond 获取时间戳-微秒
 func (receiver *uTime) TimestampMicroSecond() int64 {
-	return time.Now().UnixMicro()
+	return receiver.UnixMicro()
 }
 
-// TimestampNanoSecond 获取当前时间时间戳-纳秒
+// TimestampNanoSecond 获取时间戳-纳秒
 func (receiver *uTime) TimestampNanoSecond() int64 {
-	return time.Now().UnixNano()
+	return receiver.UnixNano()
 }
 
 // DateTime 获取当前日期时间
 func (receiver *uTime) DateTime() string {
-	return time.Now().Format("2006-01-02 15:04:05")
+	return receiver.Format("2006-01-02 15:04:05")
 }
 
 // Date 获取日期
 func (receiver *uTime) Date() string {
-	return time.Now().Format("2006-01-02")
+	return receiver.Format("2006-01-02")
 }
 
 // TimestampToDatetime 时间戳转格式化日期时间
