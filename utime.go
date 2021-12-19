@@ -72,145 +72,145 @@ func (receiver *uTime) DateTimeString() string {
 
 // AddYear 增加1年
 func (receiver *uTime) AddYear() *uTime {
-	receiver.Time =  carbon.Now().AddYear().Carbon2Time()
+	receiver.Time =  carbon.CreateFromTimestamp(receiver.Unix()).AddYear().Carbon2Time()
 	return receiver
 }
 
 // AddYears 增加年数
 func (receiver *uTime) AddYears(years int) *uTime {
-	receiver.Time = carbon.Now().AddYears(years).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddYears(years).Carbon2Time()
 	return receiver
 }
 
 // AddMonth 增加一月
 func (receiver *uTime) AddMonth() *uTime {
-	receiver.Time = carbon.Now().AddMonth().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddMonth().Carbon2Time()
 	return receiver
 }
 
 // AddMonths 增加月数
 func (receiver *uTime) AddMonths(months int) *uTime {
-	receiver.Time = carbon.Now().AddMonths(months).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddMonths(months).Carbon2Time()
 	return receiver
 }
 
 // AddDay 增加1天
 func (receiver *uTime) AddDay() *uTime {
-	receiver.Time = carbon.Now().AddDay().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddDay().Carbon2Time()
 	return receiver
 }
 
 // AddDays 增加天数
 func (receiver *uTime) AddDays(days int) *uTime {
-	receiver.Time = carbon.Now().AddDays(days).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddDays(days).Carbon2Time()
 	return receiver
 }
 
 // AddHour 增加1小时
 func (receiver *uTime) AddHour() *uTime {
-	receiver.Time = carbon.Now().AddHour().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddHour().Carbon2Time()
 	return receiver
 }
 
 // AddHours 增加小时数
 func (receiver *uTime) AddHours(hours int) *uTime {
-	receiver.Time = carbon.Now().AddHours(hours).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddHours(hours).Carbon2Time()
 	return receiver
 }
 
 // AddMinute 增加1分钟
 func (receiver *uTime) AddMinute() *uTime {
-	receiver.Time = carbon.Now().AddMinute().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddMinute().Carbon2Time()
 	return receiver
 }
 
 // AddMinutes 增加分钟数
 func (receiver *uTime) AddMinutes(minutes int) *uTime {
-	receiver.Time = carbon.Now().AddMinutes(minutes).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddMinutes(minutes).Carbon2Time()
 	return receiver
 }
 
 // AddSecond 增加1秒
 func (receiver *uTime) AddSecond() *uTime {
-	receiver.Time = carbon.Now().AddSecond().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddSecond().Carbon2Time()
 	return receiver
 }
 
 // AddSeconds 增加秒数
 func (receiver *uTime) AddSeconds(seconds int) *uTime {
-	receiver.Time = carbon.Now().AddSeconds(seconds).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).AddSeconds(seconds).Carbon2Time()
 	return receiver
 }
 
 // SubYear 减去1年
 func (receiver *uTime) SubYear() *uTime {
-	receiver.Time = carbon.Now().SubYear().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubYear().Carbon2Time()
 	return receiver
 }
 
 // SubYears 减去年数
 func (receiver *uTime) SubYears(years int) *uTime {
-	receiver.Time = carbon.Now().SubYears(years).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubYears(years).Carbon2Time()
 	return receiver
 }
 
 // SubMonth 减去1月
 func (receiver *uTime) SubMonth() *uTime {
-	receiver.Time = carbon.Now().SubMonth().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubMonth().Carbon2Time()
 	return receiver
 }
 
 // SubMonths 减去月数
 func (receiver *uTime) SubMonths(months int) *uTime {
-	receiver.Time = carbon.Now().SubMonths(months).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubMonths(months).Carbon2Time()
 	return receiver
 }
 
 // SubDay 减去1天
 func (receiver *uTime) SubDay() *uTime {
-	receiver.Time = carbon.Now().SubDay().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubDay().Carbon2Time()
 	return receiver
 }
 
 // SubDays 减去天数
 func (receiver *uTime) SubDays(days int) *uTime {
-	receiver.Time = carbon.Now().SubDays(days).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubDays(days).Carbon2Time()
 	return receiver
 }
 
 // SubHour 减去1小时
 func (receiver *uTime) SubHour() *uTime {
-	receiver.Time = carbon.Now().SubHour().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubHour().Carbon2Time()
 	return receiver
 }
 
 // SubHours 减去小时数
 func (receiver *uTime) SubHours(hours int) *uTime {
-	receiver.Time = carbon.Now().SubHours(hours).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubHours(hours).Carbon2Time()
 	return receiver
 }
 
 // SubMinute 减去1分钟
 func (receiver *uTime) SubMinute() *uTime {
-	receiver.Time = carbon.Now().SubMinute().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubMinute().Carbon2Time()
 	return receiver
 }
 
 // SubMinutes 减去分钟数
 func (receiver *uTime) SubMinutes(minutes int) *uTime {
-	receiver.Time = carbon.Now().SubMinutes(minutes).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubMinutes(minutes).Carbon2Time()
 	return receiver
 }
 
 // SubSecond 减去1秒钟
 func (receiver *uTime) SubSecond() *uTime {
-	receiver.Time = carbon.Now().SubSecond().Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubSecond().Carbon2Time()
 	return receiver
 }
 
 // SubSeconds 减去秒钟数
 func (receiver *uTime) SubSeconds(seconds int) *uTime {
-	receiver.Time = carbon.Now().SubSeconds(seconds).Carbon2Time()
+	receiver.Time = carbon.CreateFromTimestamp(receiver.Unix()).SubSeconds(seconds).Carbon2Time()
 	return receiver
 }
 
