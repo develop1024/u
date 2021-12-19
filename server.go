@@ -80,7 +80,13 @@ func (receiver *router) Run(addr string) error {
 func (receiver *Context) JSON(data interface{}) {
 	receiver.Response.WriteHeader(200)
 	receiver.Response.Header().Set("Content-Type", "application/json")
-	_, _ = receiver.Response.Write(ToBytes(Json(data)))
+
+	switch data.(type) {
+	case string:
+		_, _ = receiver.Response.Write(ToBytes(data))
+	default:
+		_, _ = receiver.Response.Write(ToBytes(Json(data)))
+	}
 }
 
 // String 字符串响应
