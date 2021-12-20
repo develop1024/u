@@ -9,9 +9,6 @@ require (
 	github.com/gookit/color v1.5.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/tidwall/gjson v1.12.1
-)
-
-require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1

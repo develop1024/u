@@ -3,8 +3,6 @@ package u
 import (
 	"fmt"
 	"github.com/go-basic/uuid"
-	"github.com/gogf/gf/database/gdb"
-	"github.com/gogf/gf/frame/g"
 	"log"
 	"strings"
 )
@@ -15,49 +13,6 @@ type Map map[string]interface{}
 func Author() {
 	fmt.Println("author: 王哈哈")
 	fmt.Println("contact: 31931727@qq.com")
-}
-
-// ErgodicParentChild 遍历父子组合关系
-func ErgodicParentChild(tableName string,
-	childName string,
-	parentField string,
-	childParentField string,
-	isParentCondition interface{}) *gdb.Result {
-	parentData, _ := g.DB().Model(tableName).Where(isParentCondition).FindAll()
-
-	for _, parent := range parentData {
-		childData, _ := g.DB().Model(tableName).Where(g.Map{
-			childParentField: parent[parentField],
-		}).FindAll()
-		parent[childName] = g.NewVar(childData)
-	}
-	return &parentData
-}
-
-// ErgodicParentChild1 遍历父子组合关系
-func ErgodicParentChild1(tableName string,
-	childName string,
-	parentField string,
-	childParentField string) *gdb.Result {
-	return ErgodicParentChild(tableName,
-		childName,
-		parentField,
-		childParentField,
-		childParentField+` is null or `+childParentField+` =''`,
-	)
-}
-
-// ErgodicParentChild2 遍历父子组合关系
-func ErgodicParentChild2(tableName string,
-	childName string,
-	parentField string,
-	childParentField string) *gdb.Result {
-	return ErgodicParentChild(tableName,
-		childName,
-		parentField,
-		childParentField,
-		parentField+`=0`,
-	)
 }
 
 // HasExists 判断元素是否存在与某列表
@@ -144,14 +99,7 @@ func HasExists(dataList interface{}, data interface{}) bool {
 				result = true
 			}
 		}
-	case []gdb.Record:
-		for _, item := range dataList.([]gdb.Record) {
-			if item.Json() == data.(gdb.Record).Json() {
-				result = true
-			}
-		}
 	}
-
 	return result
 }
 
@@ -232,6 +180,6 @@ func DebugCyan(data ...interface{}) {
 
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.32")
-	fmt.Println("Last update time: 2021-12-20 10:31:00")
+	fmt.Println("v0.0.33")
+	fmt.Println("Last update time: 2021-12-20 11:16:00")
 }
