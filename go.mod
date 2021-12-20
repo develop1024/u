@@ -5,7 +5,6 @@ go 1.16
 require (
 	github.com/develop1024/jwt-go v3.2.0+incompatible
 	github.com/go-basic/uuid v1.0.0
-	github.com/gogf/gf v1.16.6
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gookit/color v1.5.0
 	github.com/sirupsen/logrus v1.8.1
