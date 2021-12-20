@@ -1,6 +1,6 @@
 # U
 
-<img src="logo.png" alt="logo" style="zoom: 50%;" />
+<img src="https://gitee.com/develop1024/static/raw/master/logo.png" alt="logo" style="zoom: 50%;" />
 
 `U`是一款模块化的`Go`基础开发框架。模块丰富、易用性高、通用性强。
 
