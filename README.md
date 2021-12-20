@@ -2,7 +2,7 @@
 
 <img src="https://gitee.com/develop1024/static/raw/master/logo.png" style="zoom:45%;" />
 
-`U`是一款模块化的`Go`基础开发框架。模块丰富、易用性高、通用性强。
+`U`是一款模块化的`Golang`基础开发框架。模块丰富、易用性高、通用性强。
 
 #### 安装
 
