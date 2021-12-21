@@ -5,6 +5,7 @@ import (
 	"github.com/go-basic/uuid"
 	"log"
 	"strings"
+	"time"
 )
 
 type Map map[string]interface{}
@@ -178,8 +179,31 @@ func DebugCyan(data ...interface{}) {
 	PrintlnCyan(Time().DateTime(), separator)
 }
 
+// Delay 计算耗时
+func Delay(callback func()) {
+	start := time.Now().UnixNano()
+
+	callback()
+
+	fmt.Println("========================= 共耗时 ===========================")
+
+	LightRed.Print(time.Now().Unix() - start / 1000 / 1000 / 1000)
+	fmt.Println(" Unix")
+
+	LightRed.Print(time.Now().UnixMilli() - start / 1000 / 1000)
+	fmt.Println(" UnixMilli")
+
+	LightRed.Print(time.Now().UnixMicro() - start / 1000)
+	fmt.Println(" UnixMicro")
+
+	LightRed.Print(time.Now().UnixNano() - start)
+	fmt.Println(" UnixNano")
+	fmt.Println("===========================================================")
+}
+
+
 // Version 输出版本
 func Version() {
-	fmt.Println("v0.0.33")
-	fmt.Println("Last update time: 2021-12-20 11:16:00")
+	fmt.Println("v0.0.34")
+	fmt.Println("Last update time: 2021-12-21 10:31:00")
 }
