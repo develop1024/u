@@ -6,7 +6,7 @@ import (
 )
 
 type config struct {
-	viper.Viper
+	*viper.Viper
 }
 
 var _config *config
@@ -15,7 +15,7 @@ var _configOnce sync.Once
 // Cfg 获取config对象
 func Cfg() *config {
 	_configOnce.Do(func() {
-		_config = &config{}
+		_config = &config{viper.New()}
 	})
 	return _config
 }
