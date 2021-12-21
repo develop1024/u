@@ -15,7 +15,7 @@ func RandNum(num int) int {
 
 // RandRangeNum 生成指定范围的随机数
 func RandRangeNum(min, max int) int {
-	return RandNum(max - min + 1) + 1
+	return max - RandNum(max - min + 1) + 1
 }
 
 // RandStr 生成随机字符串
